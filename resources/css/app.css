@@ -1,0 +1,17 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+.carousel-gradient {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0) 50%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-caption {
+    z-index: 2;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.transition {
+    transition: all 0.3s ease;
+}
