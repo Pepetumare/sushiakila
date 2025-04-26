@@ -1,4 +1,6 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 
 .carousel-gradient {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0) 50%);
@@ -15,3 +17,21 @@
 .transition {
     transition: all 0.3s ease;
 }
+
+h1 {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.active {
+    color: red;
+    font-weight: bold;
+}
+
+.img-carta {
+    width: 100%;
+    height: 250px; /* Altura fija que quieras */
+    object-fit: cover;
+}
+
