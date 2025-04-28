@@ -11,7 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('productos_unitarios', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->string('tipo'); //Base, Salsa, Topping, Relleno
+            $table->decimal('precio', 8, 2);
+            $table->string('imagen')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('productos_unitarios');
     }
 };

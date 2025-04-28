@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SushiPersonalizadoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,7 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::get('/make_sushi', [MenuController::class, 'index'])->name('make_sushi');
+Route::get('/make_sushi', [SushiPersonalizadoController::class, 'index'])->name('make_sushi');
 Route::get('/locales', [MenuController::class, 'index'])->name('locales');
 Route::get('/contacto', [MenuController::class, 'index'])->name('contacto');
 

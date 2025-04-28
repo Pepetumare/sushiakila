@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Filtros -->
-            {{-- <div class="col-md-3">
+            <div class="col-md-3">
                 <form method="GET" action="{{ route('menu') }}">
                     <div class="mb-3">
                         <label class="form-label">Categoría</label>
@@ -29,7 +29,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Filtrar</button>
                 </form>
-            </div> --}}
+            </div>
             <div class="row" id="productos">
                 @foreach ($productos as $producto)
                     <div class="col-sm-6 col-lg-4 mb-4">
@@ -58,7 +58,12 @@
             <ul id="carrito" class="list-group mb-4"></ul>
             <h4 id="total">Total: $0</h4>
             <button id="vaciar-carrito" class="btn btn-danger">Vaciar Carrito</button>
-            <button id="pagar-carrito" class="btn btn-success">Pagar</button>
+            <form action="{{ route('pagar') }}" method="POST">
+                @csrf
+                <input type="hidden" name="productos" id="productos">
+                <button type="submit" class="btn btn-success">Proceder al pago</button>
+            </form>
+
         </div>
         <div class="d-flex justify-content-center">
             {{ $productos->links() }}
@@ -142,6 +147,13 @@
 
             // Mostrar el carrito al cargar
             actualizarCarrito();
+        });
+    </script>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            document.getElementById('productos').value = JSON.stringify(carrito);
         });
     </script>
 
